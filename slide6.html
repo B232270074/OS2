@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="mn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Slide 6 - Хэсэглэлт хэрхэн ажилладаг вэ</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #0d0d0d, #1c1c1c, #3a3a3a);
+        color: #fff;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        overflow: hidden;
+      }
+
+      h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        text-shadow: 0 0 15px rgba(255, 193, 7, 0.8);
+        animation: glow 2s infinite alternate;
+      }
+      @keyframes glow {
+        from { text-shadow: 0 0 10px rgba(255, 193, 7, 0.6); }
+        to { text-shadow: 0 0 25px rgba(255, 193, 7, 1); }
+      }
+
+      .content {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+        max-width: 1000px;
+        text-align: left;
+        animation: fadeIn 1.5s ease;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .content ul {
+        font-size: 1.3em;
+        line-height: 1.8;
+        margin: 20px 0;
+        list-style: "✔ ";
+        margin-left: 40px;
+      }
+
+      .highlight { color: #ffc107; font-weight: bold; }
+
+      .diagram {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        animation: float 4s ease-in-out infinite;
+      }
+      @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+      }
+
+      .segment {
+        width: 240px;
+        padding: 15px;
+        text-align: center;
+        border-radius: 10px;
+        font-weight: bold;
+        color: #000;
+        animation: pulse 3s infinite;
+      }
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+
+      .table { background: #4caf50; }
+      .base { background: #2196f3; }
+      .limit { background: #e91e63; }
+      .fault { background: #f44336; color: #fff; }
+
+      .hint {
+        margin-top: 30px;
+        font-size: 1em;
+        color: #bbbbbb;
+        font-style: italic;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Хэсэглэлт хэрхэн ажилладаг вэ</h1>
+    <div class="content">
+      <ul>
+        <li><span class="highlight">Segment table</span> – сегмент бүрийн base ба limit хадгална</li>
+        <li><span class="highlight">Base + Limit</span> – хаягийг шалгаж, зөв хүрээнд байгаа эсэхийг тодорхойлно</li>
+        <li><span class="highlight">Segment fault</span> – хаяг зөв хүрээнээс хэтэрвэл алдаа гарна</li>
+        <li><span class="highlight">Давуу тал</span> – логик бүтэцтэй уялдуулсан, уян хатан</li>
+        <li><span class="highlight">Сул тал</span> – fragmentation үүсэх, удирдлага төвөгтэй</li>
+      </ul>
+      <div class="diagram">
+        <div class="segment table">Segment Table</div>
+        <div class="segment base">Base Address</div>
+        <div class="segment limit">Limit</div>
+        <div class="segment fault">Segment Fault ❌</div>
+      </div>
+    </div>
+
+    <div class="hint">
+      Хэсэглэлт нь програмын логик хэсгүүдийг санах ойд тусад нь хадгалж, base+limit шалгалтаар хамгаалдаг.
+    </div>
+
+    <script>
+      document.addEventListener("keydown", function (event) {
+        if (event.key.toLowerCase() === "d") {
+          window.location.href = "slide7.html"; // Next slide
+        }
+        if (event.key.toLowerCase() === "a") {
+          window.location.href = "slide5.html"; // Previous slide
+        }
+      });
+    </script>
+  </body>
+</html>

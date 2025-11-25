@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="mn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Slide 9 - Хуудслалт хэрхэн ажилладаг вэ</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: radial-gradient(circle at top left, #0d0d0d, #1c1c1c, #3a3a3a);
+        color: #fff;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        overflow: hidden;
+      }
+
+      h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        text-shadow: 0 0 15px rgba(0, 188, 212, 0.85);
+        animation: glow 2s infinite alternate;
+      }
+      @keyframes glow {
+        from { text-shadow: 0 0 10px rgba(0, 188, 212, 0.6); }
+        to   { text-shadow: 0 0 25px rgba(0, 188, 212, 1); }
+      }
+
+      .content {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+        max-width: 1050px;
+        text-align: left;
+        animation: fadeIn 1.5s ease;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      .content ul {
+        font-size: 1.3em;
+        line-height: 1.8;
+        margin: 10px 0 0;
+        list-style: "✔ ";
+        margin-left: 40px;
+      }
+
+      .highlight { color: #00bcd4; font-weight: bold; }
+
+      /* Diagram */
+      .diagram {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        animation: float 4s ease-in-out infinite;
+      }
+      @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+      }
+
+      .block {
+        width: 260px;
+        padding: 15px;
+        text-align: center;
+        border-radius: 10px;
+        font-weight: bold;
+        color: #000;
+        animation: pulse 3s infinite;
+      }
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+
+      .page-table { background: #4caf50; }
+      .mmu { background: #2196f3; color: #fff; }
+      .tlb { background: #ff9800; }
+
+      .hint {
+        margin-top: 20px;
+        font-size: 1em;
+        color: #bbbbbb;
+        font-style: italic;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Хуудслалт хэрхэн ажилладаг вэ</h1>
+
+    <div class="content">
+      <ul>
+        <li><span class="highlight">Page Table</span> – логик хаягийг физик хаягтай холбодог хүснэгт</li>
+        <li><span class="highlight">MMU lookup</span> – MMU page table‑аас хаяг хайж хувиргана</li>
+        <li><span class="highlight">TLB (Translation Lookaside Buffer)</span> – хамгийн их ашиглагдсан хаягийг түр хадгалж хурдыг нэмэгдүүлнэ</li>
+      </ul>
+
+      <div class="diagram">
+        <div class="block page-table">Page Table</div>
+        <div class="block mmu">MMU Lookup</div>
+        <div class="block tlb">TLB Cache</div>
+      </div>
+    </div>
+
+    <div class="hint">
+      MMU нь page table ашиглан хаягийг хувиргаж, TLB нь давтагдсан хандалтыг хурдан болгодог.
+    </div>
+
+    <script>
+      document.addEventListener("keydown", function (event) {
+        if (event.key.toLowerCase() === "d") {
+          window.location.href = "slide10.html"; // Next slide
+        }
+        if (event.key.toLowerCase() === "a") {
+          window.location.href = "slide8.html"; // Previous slide
+        }
+      });
+    </script>
+  </body>
+</html>

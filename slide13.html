@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="mn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Slide 13 - Виртуал санах ой</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #0d0d0d, #1c1c1c, #3a3a3a);
+        color: #fff;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        overflow: hidden;
+      }
+
+      h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        text-shadow: 0 0 15px rgba(63, 81, 181, 0.85);
+        animation: glow 2s infinite alternate;
+      }
+      @keyframes glow {
+        from { text-shadow: 0 0 10px rgba(63, 81, 181, 0.6); }
+        to   { text-shadow: 0 0 25px rgba(63, 81, 181, 1); }
+      }
+
+      .content {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+        max-width: 1100px;
+        text-align: left;
+        animation: fadeIn 1.5s ease;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      .content ul {
+        font-size: 1.3em;
+        line-height: 1.8;
+        margin: 10px 0 0;
+        list-style: "✔ ";
+        margin-left: 40px;
+      }
+
+      .highlight { color: #3f51b5; font-weight: bold; }
+
+      /* Diagram blocks */
+      .diagram {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        animation: float 4s ease-in-out infinite;
+      }
+      @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+      }
+
+      .block {
+        width: 280px;
+        padding: 15px;
+        text-align: center;
+        border-radius: 10px;
+        font-weight: bold;
+        color: #000;
+        animation: pulse 3s infinite;
+      }
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+
+      .ram { background: #4caf50; color: #fff; }
+      .storage { background: #ff9800; }
+      .logical { background: #2196f3; color: #fff; }
+
+      .hint {
+        margin-top: 20px;
+        font-size: 1em;
+        color: #bbbbbb;
+        font-style: italic;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Виртуал санах ой</h1>
+
+    <div class="content">
+      <ul>
+        <li><span class="highlight">RAM-аас том програм</span> – виртуал санах ой ашиглан ажиллуулна</li>
+        <li><span class="highlight">Secondary storage → RAM mapping</span> – дискнээс RAM руу хуудас ачаална</li>
+        <li><span class="highlight">Logical Address Space > Physical RAM</span> – програмын логик хаяг RAM‑ын бодит хэмжээнээс их байж болно</li>
+      </ul>
+
+      <div class="diagram">
+        <div class="block ram">Physical RAM</div>
+        <div class="block storage">Secondary Storage (Disk)</div>
+        <div class="block logical">Logical Address Space</div>
+      </div>
+    </div>
+
+    <div class="hint">
+      Виртуал санах ой нь програмыг RAM‑ын хэмжээнээс давуулан ажиллуулах боломж олгодог.
+    </div>
+
+    <script>
+      document.addEventListener("keydown", function (event) {
+        if (event.key.toLowerCase() === "d") {
+          window.location.href = "slide14.html"; // Next slide
+        }
+        if (event.key.toLowerCase() === "a") {
+          window.location.href = "slide12.html"; // Previous slide
+        }
+      });
+    </script>
+  </body>
+</html>
