@@ -10,7 +10,7 @@
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background: radial-gradient(circle at top left, #0d0d0d, #1c1c1c, #3a3a3a);
         color: #fff;
-        min-height: 100vh;
+        min-height: 100vh; 
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -62,7 +62,7 @@
     </style>
   </head>
   <body>
-    <h1>Операцын системийн санах ойн удирдлага</h1>
+    <h1>Санах ойн удирдлага</h1>
 
     <div class="content">
       <h2>Багийн дугаар: <span class="highlight">05</span></h2>
@@ -74,8 +74,11 @@
 
     <script>
       document.addEventListener("keydown", function (event) {
-        if (event.key.toLowerCase() === "d") {
-          window.location.href = "slide1.html"; // Next slide
+        if (event.key.toLowerCase() === "a") {
+          window.location.href = "slide21.html"; // Одоо дараагийн хуудсыг өмнөх слайд руу шилжүүлнэ
+        }
+        else if (event.key.toLowerCase() === "d") {
+          window.location.href = "slide1.html"; // Одоо өмнөх хуудсыг өмнөх слайд руу шилжүүлнэ
         }
       });
     </script>
